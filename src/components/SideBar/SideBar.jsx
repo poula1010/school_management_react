@@ -8,7 +8,7 @@ function SideBar() {
             <div className="selection-tab">
                 <div className="selection">Employee</div>
                 <div className="selection">Student</div>
-                <div className="selection"  >Course</div>
+                <div className="selection" style={{ "font": "Open Sans" }}>Course</div>
             </div>
         </div>
     )

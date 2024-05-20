@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,7 +14,7 @@
 
   --sidebar-width: 256px;
   --header-height: 64px;
-
+  background-color: #f7f8fc;
 }
 
 a {
@@ -74,4 +74,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.table-container {
+  padding: 20px;
 }
