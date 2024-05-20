@@ -1,0 +1,4 @@
+.main-view {
+    width: calc(100vw - var(--sidebar-width));
+    background-color: aliceblue;
+}
