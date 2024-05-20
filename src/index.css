@@ -12,7 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --sidebar-width: 500px;
+  --sidebar-width: 256px;
+  --header-height: 64px;
+
 }
 
 a {

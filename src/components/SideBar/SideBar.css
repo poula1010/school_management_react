@@ -1,7 +1,26 @@
 .side-bar {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
     width: var(--sidebar-width);
-    background-color: beige;
+    background-color: #f7f8fc;
+}
+
+.selection-tab {
+
+    max-width: 240px;
+    margin-top: 100px;
+    overflow: visible;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.selection {
+    -webkit-border-radius: 0 16px 16px 0;
+    border-radius: 0 16px 16px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+
 }

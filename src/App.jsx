@@ -1,4 +1,5 @@
 import './App.css'
+import Header from './components/Header/Header'
 import MainView from './components/MainView/MainView'
 import SideBar from './components/SideBar/SideBar'
 
@@ -6,10 +7,13 @@ function App() {
 
 
   return (
-    <div className='app-container'>
-      <SideBar />
-      <MainView />
-    </div>
+    <>
+      <Header />
+      <div className='app-container'>
+        <SideBar />
+        <MainView />
+      </div>
+    </>
   )
 }
 
