@@ -26,3 +26,12 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.main-view {
+  width: calc(100vw - var(--sidebar-width));
+  background-color: #FFFFFF;
+  border-radius: 2%;
+  box-sizing: border-box;
+  padding: 50px;
+  /* height: 100%; */
+}

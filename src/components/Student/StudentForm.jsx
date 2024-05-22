@@ -1,9 +1,10 @@
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react"
 import "./StudentForm.css"
 import axios from "axios";
 export default function StudentForm() {
     const [studentData, setStudentData] = useState({ "personalDetails": { "firstname": "f", "lastname": "l", "ssn": "" }, "address": { "city": "", "street": "" } });
+    const navigate = useNavigate();
     function handlePersonalDetailChange(event) {
         setStudentData(prevStudentData => ({
             ...prevStudentData,
@@ -32,6 +33,7 @@ export default function StudentForm() {
             }
         }).then(resposnse => {
             console.log(resposnse);
+            navigate("/students");
         })
     }
     return (

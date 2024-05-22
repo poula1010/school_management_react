@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useEffect } from "react";
-import EmployeeTable from "./EmployeeTable"
+import StudentTable from "./StudentTable"
 import axios from "axios";
 
-export default function EmployeePage() {
-    const [pagedEmployeeData, setPagedEmployeeData] = useState({
+export default function StudentPage() {
+    const [pagedStudentData, setPagedStudentData] = useState({
         "totalNumber": 3,
         "currentPage": 0,
         "totalNumberOfPages": 1,
@@ -15,21 +15,20 @@ export default function EmployeePage() {
     function handleChangePage(event, page) {
         setPageData({ ...pageData, page: page });
     }
-    function handleChangeRowsPerPage(event, size) {
-        setPageData({ ...pageData, size: size });
+    function handleChangeRowsPerPage(event) {
+        setPageData((prevData) => ({ page: 0, size: +event.target.value }));
     }
-    function fetchEmployeeData(page = 0, size = 5) {
+    function fetchStudentData(page = 0, size = 5) {
         axios.get(`http://localhost:8081/api/student?page=${page}&size=${size}`).then(response => {
-            console.log(response);
-            setPagedEmployeeData(response.data);
+            setPagedStudentData(response.data);
         })
     }
     useEffect(() => {
-        fetchEmployeeData(pageData.page, pageData.size);
+        fetchStudentData(pageData.page, pageData.size);
     }, [pageData])
     return (
         <div className="table-container">
-            <EmployeeTable employeeData={pagedEmployeeData} handleChangePage={handleChangePage} pageData={pageData} handleChangeRowsPerPage={handleChangeRowsPerPage} />
+            <StudentTable studentData={pagedStudentData} handleChangePage={handleChangePage} pageData={pageData} handleChangeRowsPerPage={handleChangeRowsPerPage} />
         </div>
     )
 }

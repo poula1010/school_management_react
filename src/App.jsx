@@ -1,6 +1,7 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header/Header'
-import MainView from './components/MainView/MainView'
+
 import SideBar from './components/SideBar/SideBar'
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
       <Header />
       <div className='app-container'>
         <SideBar />
-        <MainView />
+        <div className="main-view" >
+          <Outlet />
+        </div>
       </div>
     </>
   )

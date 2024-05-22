@@ -1,14 +1,12 @@
 
-import StudentForm from "../Employee/StudentForm";
+import StudentForm from "../Student/StudentForm";
 // import EmployeePage from "../Employee/EmployeePage";
 import "./MainView.css"
 
 function MainView() {
 
     return (
-        <div className="main-view" >
-            <StudentForm />
-        </div >
+        <StudentForm />
     )
 }
 

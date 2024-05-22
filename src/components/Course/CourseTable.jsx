@@ -14,17 +14,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import { TableFooter, TablePagination } from '@mui/material';
 
-function createData(id, firstname, lastname, ssn, city, street) {
-    return { id, firstname, lastname, ssn, city, street };
-}
 
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 function TablePaginationActions(props) {
     const { count, page, rowsPerPage, onPageChange } = props;
 
@@ -83,27 +73,22 @@ export default function BasicTable(props) {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>FirstName</TableCell>
-                        <TableCell align="center">LastName</TableCell>
-                        <TableCell align="center">SSN</TableCell>
-                        <TableCell align="center">City</TableCell>
-                        <TableCell align="center">Street</TableCell>
+                        <TableCell>Title</TableCell>
+                        <TableCell align="center">Description</TableCell>
+
                         <TableCell align="center">View</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.employeeData.entities.map((row) => (
+                    {props.courseData.entities.map((row) => (
                         <TableRow
                             key={row.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                             <TableCell component="th" scope="row">
-                                {row.personalDetails.firstname}
+                                {row.title}
                             </TableCell>
-                            <TableCell align="center">{row.personalDetails.lastname}</TableCell>
-                            <TableCell align="center">{row.personalDetails.ssn}</TableCell>
-                            <TableCell align="center">{row.address.city}</TableCell>
-                            <TableCell align="center">{row.address.street}</TableCell>
+                            <TableCell align="center">{row.description}</TableCell>
                             <TableCell align="center">{<div>Hello</div>}</TableCell>
                         </TableRow>
                     ))}
@@ -111,9 +96,9 @@ export default function BasicTable(props) {
                 <TableFooter>
                     <TableRow>
                         <TablePagination
-                            rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                            rowsPerPageOptions={[5, 10, 25]}
                             colSpan={3}
-                            count={props.employeeData.totalNumber}
+                            count={props.courseData.totalNumber}
                             rowsPerPage={props.pageData.size}
                             page={props.pageData.page}
                             slotProps={{
