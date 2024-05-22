@@ -1,14 +1,13 @@
-import EmployeeTable from "../Employee/EmployeeTable";
+
+import StudentForm from "../Employee/StudentForm";
+// import EmployeePage from "../Employee/EmployeePage";
 import "./MainView.css"
 
 function MainView() {
 
     return (
         <div className="main-view" >
-            <div className="table-container">
-                <EmployeeTable></EmployeeTable>
-            </div>
-
+            <StudentForm />
         </div >
     )
 }
